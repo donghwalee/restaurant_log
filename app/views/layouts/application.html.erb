@@ -2,18 +2,25 @@
 <html>
 <head>
   <title>RestaurantReviews</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= render partial: 'layouts/header' %>
 
-  <% if flash[:message] %>
-    <div class="alert">
-      <%= flash[:message] %>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="...">
+      </a>
     </div>
-  <% end %>
+    <p class="navbar-text navbar-right">Please sign in or register below</p>
+  </div>
+</nav>
+
+<body>
 
   <%= yield %>
 

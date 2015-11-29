@@ -8,34 +8,43 @@
   <body>
 
 
-    <h1>Hello Diner</h1>
+    <div class="container">
+      <div class="row">
+        <div class="login-area">
+          <% if flash[:message] %>
+            <div class="alert">
+              <%= flash[:message] %>
+            </div>
+          <% end %>
+          PLEASE SIGN IN:
+          <form action="<%= session_path %>" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="email" name="user[email]" placeholder="Your Email Address">
+            <br />
+            <input type="password" name="user[password]" placeholder="Your Password">
+            <br />
+            <input class="btn btn-lg btn-primary" id="button" type="submit" name="name" value="Sign In">
+          </form>
+          <hr />
 
-    <h3>Please Sign In</h3>
-    <form action="<%= session_path %>" method="POST">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="email" name="user[email]" placeholder="Your Email Address">
-      <br />
-      <input type="password" name="user[password]" placeholder="Your Password">
-      <br />
-      <input type="submit" name="name" value="Sign In">
-    </form>
+          Or, if you do not have an account, please
+            <button type="submit" class="btn btn-xs btn-danger expand">Register</button>
+          </h3>
 
-    <hr />
-
-    <h3>Or Please:
-      <button type="submit" class="expand">Register</button>
-    </h3>
-
-    <div class="hide-at-start">
-      <form action="<%= users_path %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="email" name="user[email]" placeholder="Your Email Address">
-        <br />
-        <input type="password" name="user[password]" placeholder="Desired Password">
-        <br />
-        <input type="submit" name="name" value="Sign Up">
-      </form>
+          <div class="hide-at-start">
+            <form action="<%= users_path %>" method="POST">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="email" name="user[email]" placeholder="Your Email Address">
+              <br />
+              <input type="password" name="user[password]" placeholder="Desired Password">
+              <br />
+              <input class="btn btn-lg btn-primary" id="button" type="submit" name="name" value="Sign Up">
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+
 
     <script src="/lib/js/login_signup.js" type="text/javascript"></script>
 

@@ -1,32 +1,76 @@
-<header ng-controller="HeaderController as header">
-  <h1>Hello {{header.current_user.email}}, log your culinary journey here.</h1>
-</header>
-
 <main ng-controller="RestaurantController as rest">
-  <h2>Log Your Restaurant</h2>
-  <form ng-submit="rest.createRestaurant()">
-    <input type="text" ng-model="rest.newRestName" placeholder="Restaurant Name">
-    <input type="text" ng-model="rest.newRestLoc" placeholder="Restaurant Location">
-    <input type="date" ng-model="rest.newRestDate" placeholder="Dined On">
-    <input type="number" ng-model="rest.newRestRating" placeholder="Rating">
-    <input type="text" ng-model="rest.newRestComm" placeholder="Comments">
-    <input type="submit" value="Add Log">
-  </form>
 
-  <h2>Past Logs</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="rest-enter-area">
+        <h2>Log Your Dining Experience</h2>
+        <form ng-submit="rest.createRestaurant()">
+          <input type="text" ng-model="rest.newRestName" placeholder="Restaurant Name">
+          <input type="text" ng-model="rest.newRestLoc" placeholder="Restaurant Location (NYC, SF, Dubai, etc.)">
+          <input type="date" ng-model="rest.newRestDate" placeholder="Dined On">
+          <br />
+          Rating:
+          <label class="radio-inline">
+            <input type="radio" ng-model="rest.newRestRating"
+            ng-value="1">
+            1 Star
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="rest.newRestRating"
+            ng-value="2">
+            2 Stars
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="rest.newRestRating"
+            ng-value="3">
+            3 Stars
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="rest.newRestRating"
+            ng-value="4">
+            4 Stars
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="rest.newRestRating"
+            ng-value="5">
+            5 Stars
+          </label>
+
+          <input type="text" ng-model="rest.newRestComm" placeholder="Comments (Optional)">
+          <input class="btn btn-primary" id="button" type="submit" value="Add Log">
+        </form>
+      </div>
+    </div>
+
+
+<hr />
+
+  <div class="row rest-list-title">
+    Previous Experiences
+  </div>
+
   <ul>
     <li ng-repeat="r in rest.current_user_restaurants">
-      Name: {{r.name}}
-      <br />
-      Location: {{r.address}}
-      <br />
-      Dined On: {{r.dined_at}}
-      <br />
-      Rating: {{r.rating}}
-      <br />
-      Comments: {{r.comments}}
+      <div class="row rest-list">
+        <div class="col-md-2" id="rating">
+          <strong>RATING:</strong>
+          <h1>{{r.rating}} &#9733;</h1>
+        </div>
+        <div class="col-md10" id="info">
+          <strong>RESTAURANT:</strong>
+          <br />
+          {{r.name}}, located in/at {{r.address}}
+          <br />
+          Date: {{r.dined_at}}
+          <br />
+          Comments: {{r.comments}}
+        </div>
+      </div>
     </li>
   </ul>
 
+
+  </div>
 
 </main>
