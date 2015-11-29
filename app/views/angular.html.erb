@@ -2,6 +2,15 @@
   <h1>Hello {{header.current_user.email}}, log your culinary journey here.</h1>
 </header>
 
-<main>
-  main!
+<main ng-controller="RestaurantController as rest">
+  <h2>Log Your Restaurant</h2>
+  <form ng-submit="rest.createRestaurant()">
+    <input type="text" placeholder="Restaurant Name">
+    <input type="text" placeholder="Restaurant Type">
+    <input type="text" placeholder="Restaurant Location">
+    <input type="date" placeholder="Dined On">
+    <input type="number" placeholder="Rating">
+    <input type="text" placeholder="Comments">
+    <input type="submit" value="Add Log">
+  </form>
 </main>
