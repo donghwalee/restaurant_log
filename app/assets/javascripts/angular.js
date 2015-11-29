@@ -26,12 +26,12 @@ app.controller('RestaurantController', ['$http', function($http){
     $http.post('/restaurants', {
       authenticity_token: token,
       restaurant: {
-        name: "ABC Hard",
-        rest_type: "Japanese",
-        address: "NYC",
-        dined_at: "11-11-2011",
-        rating: 4,
-        comments: "Great sushi"
+        name: this.newRestName,
+        rest_type: this.newRestType,
+        address: this.newRestLoc,
+        dined_at: this.newRestDate,
+        rating: this.newRestRating,
+        comments: this.newRestComm
       }
     }).success(function(data){
       console.log(data);
