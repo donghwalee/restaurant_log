@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   # allow user to be available in views
   helper_method :current_user
 
+  def angular
+    render '/angular'
+  end
+
   def welcome
     render '/welcome'
   end

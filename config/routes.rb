@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'application#welcome'
 
+  get 'application/angular'
+
   resources :restaurants, only: [:index, :create], defaults: { format: :json }
 
 
