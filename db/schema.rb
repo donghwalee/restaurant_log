@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121215939) do
+ActiveRecord::Schema.define(version: 20151129103356) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "restaurants", force: :cascade do |t|
     t.integer  "user_id"
@@ -20,10 +23,13 @@ ActiveRecord::Schema.define(version: 20151121215939) do
     t.string   "address",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "rating",     null: false
+    t.date     "dined_at",   null: false
+    t.string   "comments"
   end
 
-  add_index "restaurants", ["rest_type"], name: "index_restaurants_on_rest_type"
-  add_index "restaurants", ["user_id"], name: "index_restaurants_on_user_id"
+  add_index "restaurants", ["rest_type"], name: "index_restaurants_on_rest_type", using: :btree
+  add_index "restaurants", ["user_id"], name: "index_restaurants_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -32,6 +38,7 @@ ActiveRecord::Schema.define(version: 20151121215939) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
+  add_foreign_key "restaurants", "users"
 end

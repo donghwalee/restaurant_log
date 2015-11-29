@@ -8,10 +8,16 @@ class Restaurant < ActiveRecord::Base
     'Supermarket', 'Thai', 'Turkish', 'Ukrainian', 'Vietnamese', 'Other'
   ]
 
+  RATINGS = [
+    1, 2, 3, 4, 5
+  ]
+
   validates :name, presence: true
   validates :user, presence: true
   validates :rest_type, inclusion: { in: REST_TYPES }
   validates :address, presence: true
+  validates :dined_at, presence: true
+  validates :rating, inclusion: { in: RATINGS }
 
   belongs_to :user
 
