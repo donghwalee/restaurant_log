@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+
+ div.alert {
+   background: pink;
+ }
+
+header {
+  height: 60px;
+  background: seagreen;
+}
+
+.logo > img {
+  display: block;
+  float: left;
+   height: 50px;
+ }
+
+ .logo-text {
+   display: block;
+   float: left;
+ }
+
+ nav {
+   float: right;
+   color: white;
+ }
+
+ nav a {
+   color: white;
+   text-decoration: none;
+ }

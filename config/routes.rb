@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+  resources :restaurants
+  root 'application#welcome'
+
+  # resources "users", only: [:create]
+  post '/users' => 'users#create'
+
+  # session
+  # get '/session' => 'session#current_user'
+  post '/session' => 'session#create'
+  delete '/session' => 'session#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

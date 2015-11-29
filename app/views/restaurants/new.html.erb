@@ -1,0 +1,17 @@
+<form action="<%= restaurants_path %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <select name="restaurant[rest_type]">
+    <% Restaurant::REST_TYPES.each do |t| %>
+      <option value="<%= t %>" <%= @restaurant.rest_type == t ? "selected" : "" %>>
+        <%= t %>
+      </option>
+    <% end %>
+  </select>
+  <br />
+  <input type="text" name="restaurant[name]" placeholder="Restaurant Name" value="<%= @restaurant.name %>">
+  <br />
+  <input type="text" name="restaurant[address]" placeholder="Location / Address">
+  <br />
+  <input type="submit" value="Add Restaurant">
+
+</form>
