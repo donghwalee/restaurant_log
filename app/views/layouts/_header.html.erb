@@ -3,16 +3,5 @@
     <%= image_tag 'logo.png' %>
     <span class="logo-text">Restaurant Log</span>
   </div>
-  <nav>
-    <% if current_user %>
-      <a href="<%= new_restaurant_path%>">
-        New Restaurant
-      </a>
-      <form action="<%= session_path %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Log Out">
-      </form>
-    <% end %>
-  </nav>
+
 </header>

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-
-  resources :restaurants
   root 'application#welcome'
+
+  resources :restaurants, only: [:index, :create], defaults: { format: :json }
+
 
   # resources "users", only: [:create]
   post '/users' => 'users#create'
 
   # session
-  # get '/session' => 'session#current_user'
+  get '/session' => 'session#current_diner', defaults: { format: :json }
   post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
 
