@@ -17,9 +17,13 @@ app.controller('RestaurantController', ['$http', function($http){
   var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   var controller = this;
   //get restaurants
-  $http.get('/restaurants').success(function(data){
-    controller.current_user_restaurants = data.restaurants;
-  });
+  var getRestaurants = function(){
+    $http.get('/restaurants').success(function(data){
+      controller.current_user_restaurants = data.restaurants;
+    });
+  }
+
+  getRestaurants();
 
   // post to restaurants
   this.createRestaurant = function(){
@@ -34,7 +38,7 @@ app.controller('RestaurantController', ['$http', function($http){
         comments: this.newRestComm
       }
     }).success(function(data){
-      console.log(data);
+      getRestaurants();
     });
   }
 }]);
