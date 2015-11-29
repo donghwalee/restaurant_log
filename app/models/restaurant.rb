@@ -17,7 +17,7 @@ class Restaurant < ActiveRecord::Base
   validates :rest_type, inclusion: { in: REST_TYPES }
   validates :address, presence: true
   validates :dined_at, presence: true
-  validates :rating, inclusion: { in: RATINGS }
+  validates :rating, presence: true
 
   belongs_to :user
 
