@@ -34,7 +34,6 @@ app.controller('RestaurantController', ['$http', '$scope', function($http, $scop
       authenticity_token: token,
       restaurant: {
         name: this.newRestName,
-        rest_type: this.newRestType,
         address: this.newRestLoc,
         dined_at: this.newRestDate,
         rating: this.newRestRating,
