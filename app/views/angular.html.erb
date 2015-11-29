@@ -13,4 +13,24 @@
     <input type="text" placeholder="Comments">
     <input type="submit" value="Add Log">
   </form>
+
+  <h2>Past Logs</h2>
+  {{rest.current_user_restaurants}}
+  <ul>
+    <li ng-repeat="r in rest.current_user_restaurants">
+      Name: {{r.name}}
+      <br />
+      Type: {{r.rest_type}}
+      <br />
+      Location: {{r.address}}
+      <br />
+      Dined On: {{r.dined_at}}
+      <br />
+      Rating: {{r.rating}}
+      <br />
+      Comments: {{r.comments}}
+    </li>
+  </ul>
+
+
 </main>

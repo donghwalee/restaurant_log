@@ -13,7 +13,15 @@ app.controller('HeaderController', ['$http', function($http){
 
 // Main
 app.controller('RestaurantController', ['$http', function($http){
+  // token from DOM
   var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  var controller = this;
+  //get restaurants
+  $http.get('/restaurants').success(function(data){
+    controller.current_user_restaurants = data.restaurants;
+  });
+
+  // post to restaurants
   this.createRestaurant = function(){
     $http.post('/restaurants', {
       authenticity_token: token,
