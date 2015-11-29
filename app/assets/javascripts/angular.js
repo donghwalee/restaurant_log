@@ -30,6 +30,15 @@ app.controller('RestaurantController', ['$http', '$scope', function($http, $scop
 
   // post to restaurants
   this.createRestaurant = function(){
+
+    controller.current_user_restaurants.push({
+      name: this.newRestName,
+      address: this.newRestLoc,
+      dined_at: this.newRestDate,
+      rating: this.newRestRating,
+      comments: this.newRestComm
+    });
+
     $http.post('/restaurants', {
       authenticity_token: token,
       restaurant: {
@@ -40,6 +49,8 @@ app.controller('RestaurantController', ['$http', '$scope', function($http, $scop
         comments: this.newRestComm
       }
     }).success(function(data){
+      controller.current_user_restaurants.pop();
+      controller.current_user_restaurants.push(data.restaurant);
       getRestaurants();
     });
   }
