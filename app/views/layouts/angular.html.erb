@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="RestaurantApp">
+<head>
+  <title>RestaurantReviews</title>
+  <%= stylesheet_link_tag    'angular', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js">
+  </script>
+</head>
+<body>
+
+  <%= yield %>
+  <%= javascript_include_tag 'angular', 'data-turbolinks-track' => true %>
+</body>
+</html>
