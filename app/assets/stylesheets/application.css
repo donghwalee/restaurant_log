@@ -44,6 +44,10 @@ body {
    font-size: .9em;
  }
 
+ .navbar-brand img {
+   margin-top: -10px;
+ }
+
  .login-area {
   padding: 20px;
   border-top: firebrick 1px solid;

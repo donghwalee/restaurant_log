@@ -13,8 +13,8 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="...">
+      <a class="navbar-brand" href="https://github.com/donghwalee/restaurant_log" target="_blank">
+        <img alt="Brand" src="/lib/images/logo.png">
       </a>
     </div>
     <% if current_user %>
@@ -22,7 +22,7 @@
       <form action="<%= session_path %>" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="_method" value="DELETE">
-        <input class="btn btn-xs btn-warning" id="top-button" type="submit" value="Log Out">
+        <input class="btn btn-xs btn-default" id="top-button" type="submit" value="Log Out">
       </form>
     <% end %>
   </div>

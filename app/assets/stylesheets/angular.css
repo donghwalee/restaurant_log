@@ -25,6 +25,11 @@ body {
  background-size:50px 50px;
 
  font-family: 'Varela Round', sans-serif;
+ padding-bottom: 50px;
+}
+
+.navbar-brand img {
+  margin-top: -10px;
 }
 
 input[type='text'] {
