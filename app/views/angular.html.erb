@@ -6,7 +6,6 @@
   <h2>Log Your Restaurant</h2>
   <form ng-submit="rest.createRestaurant()">
     <input type="text" ng-model="rest.newRestName" placeholder="Restaurant Name">
-    <input type="text" ng-model="rest.newRestType" placeholder="Restaurant Type">
     <input type="text" ng-model="rest.newRestLoc" placeholder="Restaurant Location">
     <input type="date" ng-model="rest.newRestDate" placeholder="Dined On">
     <input type="number" ng-model="rest.newRestRating" placeholder="Rating">
@@ -18,8 +17,6 @@
   <ul>
     <li ng-repeat="r in rest.current_user_restaurants">
       Name: {{r.name}}
-      <br />
-      Type: {{r.rest_type}}
       <br />
       Location: {{r.address}}
       <br />

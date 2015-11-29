@@ -12,16 +12,19 @@ app.controller('HeaderController', ['$http', function($http){
 
 
 // Main
-app.controller('RestaurantController', ['$http', function($http){
+app.controller('RestaurantController', ['$http', '$scope', function($http, $scope){
+
   // token from DOM
   var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   var controller = this;
+
+
   //get restaurants
   var getRestaurants = function(){
     $http.get('/restaurants').success(function(data){
       controller.current_user_restaurants = data.restaurants;
     });
-  }
+  };
 
   getRestaurants();
 
