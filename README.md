@@ -13,7 +13,7 @@ POST /session creates a new session and redirect to SPA
 
 ## JSON
 
-GET /current_user will return JSON object with current user
+GET /session will return JSON object with current user
 
 GET /restaurants will return array of restaurant logs
 
