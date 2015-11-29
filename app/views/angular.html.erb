@@ -63,7 +63,7 @@
           <br />
           {{r.name}}, located in/at {{r.address}}
           <br />
-          Date: {{r.dined_at}}
+          Date: {{r.dined_at | date : format : mediumDate }}
           <br />
           Comments: {{r.comments}}
         </div>
