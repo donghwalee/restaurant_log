@@ -1,51 +1,38 @@
-# API Docs
+# Project Four - Ruby on Rails / Angular Application
 
-## Classical
+## This is a simple restaurant logging app utilizing Ruby on Rails and Angular
 
-User + Session are done via server-rendered erb
+## Simplified flow for app:
+- User can log in or register
+- Once registered and logged in, they are shown a page with their previous restaurant logs
+- The user is able to enter new restaurant logs, the page uses Angular so it does not need to refresh to show the new entry
+- The user is able to log out
 
-ROOT (/): Sign In / Sign Up
+## Future additions:
+- Full CRUD (including update and delete capabilities).
+- Ability to sort by different fields, ratings, dates, etc.
+- Different types of restaurant (French, American, etc.)
+- Integration with other relevant APIs, Google Maps, Yelp, reservation, ordering, etc.
+- Ability to share or have others see your entries
+- Ability to upload / add images, etc.
+- Additional model to log additional instances of going to the same restaurant
 
-POST /users create a new user, redirect to ROOT
-POST /session creates a new session and redirect to SPA
+## Project URLs:
+- http://sleepy-bastion-7610.herokuapp.com/
+- https://github.com/donghwalee/restaurant_log
 
---
+## Wireframes and user stories used:
 
-## JSON
+![](https://app.box.com/shared/static/2khygf985hesbbur0hpy7vdvl01q9y04.jpg)
 
-GET /session will return JSON object with current user
+![](https://app.box.com/shared/static/0g2oyfrfeddnfcza8u7qltyt9pyknrwf.jpg)
 
-GET /restaurants will return array of restaurant logs
+![](https://app.box.com/shared/static/iwp01ukol8g5wwxtkpvllkrcodmuv9wl.jpg)
 
-```json
-  {
-    restaurants: [
-    {
-      name: "ABC",
-      rest_type: "Japanese",
-      address: "NYC",
-      dined_at: "11-11-2011",
-      rating: 4,
-      comments: "Great sushi"
-    }
-    ]
-  }
-```
+![](https://app.box.com/shared/static/uow21sy4hr3885oazr619sy52v1xksql.jpg)
 
-POST /restaurants will take a JSON object such as:
+![](https://app.box.com/shared/static/eco25dmj3a48feklvnrm557i5ww2u5w3.jpg)
 
-```json
-  {
-    authenticity_token: "dkjafkald;jfkdsjfio;ajfdk243",
-    restaurant: {
-      name: "some name",
-      rest_type: "type of rest",
-      address: "location",
-      dined_at: "date",
-      rating: "number from 1-5",
-      comments: "some comment"
-    }
-  }
-```
+![](https://app.box.com/shared/static/4xde66dm7n3gg7sq4nbixfvym3pq5y36.jpg)
 
-and return the created object
+![](https://app.box.com/shared/static/1bug2lozi6wyaa06f4x5icrcmf5wqy4k.jpg)
