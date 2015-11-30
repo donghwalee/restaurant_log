@@ -23,16 +23,4 @@
 
 ## Wireframes and user stories used:
 
-![](https://app.box.com/shared/static/2khygf985hesbbur0hpy7vdvl01q9y04.jpg)
-
-![](https://app.box.com/shared/static/0g2oyfrfeddnfcza8u7qltyt9pyknrwf.jpg)
-
-![](https://app.box.com/shared/static/iwp01ukol8g5wwxtkpvllkrcodmuv9wl.jpg)
-
-![](https://app.box.com/shared/static/uow21sy4hr3885oazr619sy52v1xksql.jpg)
-
-![](https://app.box.com/shared/static/eco25dmj3a48feklvnrm557i5ww2u5w3.jpg)
-
-![](https://app.box.com/shared/static/4xde66dm7n3gg7sq4nbixfvym3pq5y36.jpg)
-
-![](https://app.box.com/shared/static/1bug2lozi6wyaa06f4x5icrcmf5wqy4k.jpg)
+![](https://app.box.com/shared/static/lk2nn2s8xxgr6jyp286w1lb43oceapim.jpg)
